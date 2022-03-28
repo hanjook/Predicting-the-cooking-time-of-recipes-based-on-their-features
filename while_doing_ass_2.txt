@@ -1,0 +1,41 @@
+시도:
+1. tried to do just the name countvec got aroun 60 smth
+2. tried to do name + steps: got around 
+	0.7412878787878788	NB
+	0.7357575757575757	DT
+	0.6978787878787879	KNN
+3. tried to do name + ing: got around 
+	0.688939393939394
+	0.6504545454545455
+	0.6384090909090909
+4. tried to do steps + ing: got around
+	0.7175
+	0.7316666666666667
+	0.6687121212121212
+5. tried to do name + steps + ingredients, got around
+	0.7319696969696969
+	0.7368181818181818
+	0.6762121212121213
+6. added chi-squared feature selection, got aroung 53ish
+7. tried applying chi-squared feature selection before stacking the different features got 70 for dt, but 54 and 64 for nb and knn
+8. just did name + steps using step 5, got similar results
+9. steps + ingredients also similar results
+10. name + ingredients also gave similar results. Trash this way.
+11. Added the n_steps as well to check if the accuracy rises, but it did not. (name, steps, ingredients)
+	0.7317424242424242
+	0.7315151515151516
+	0.7125
+12. Tried step 11 with n_ingredients:
+	0.7332575757575758
+	0.7431060606060607
+	0.7075757575757575
+13. Results were better, so tried with name+steps+n_ingredients. Found out that stacking them like this helps decision tree, but not naive bayes
+	0.740909090909091
+	0.7390151515151515
+	0.7131818181818181
+14. Tried to make two separate models and use the predictions to make a final model, but they were trash
+	0.5171969696969697 NB
+
+15. Tried chi-squared selection with differing amount of selected features, got lower accuracies as the number decreased. Determined that
+this data required full features to be used. (features refer to the words)
+'name' is key
